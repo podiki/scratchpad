@@ -174,7 +174,9 @@
              :new
              (push (cons name window) *scratch-splits*))))))
 
-(defun toggle-floating-scratchpad (name cmd &key initial-gravity (ratio *default-float-ratio*))
+(defun toggle-floating-scratchpad (name cmd &key initial-gravity
+                                              (ratio *default-float-ratio*)
+                                              initial-width initial-height)
   "Create or toggle display of a named scratchpad.  Display by floating window."
   (let ((found (member name *scratch-floats*
                        :key #'car
@@ -200,7 +202,11 @@
              :focus
              (stumpwm::float-window window (current-group))
              (cond (initial-gravity
-                    (resize-by-gravity window initial-gravity ratio))))))))
+                    (resize-by-gravity window initial-gravity ratio)))
+             (if initial-height (stumpwm::float-window-move-resize
+                                 window :height initial-height))
+             (if initial-width (stumpwm::float-window-move-resize
+                                window :width initial-width)))))))
 
 (defcommand scratchpad-float (name cmd gravity) ((:string "Name: ")
                                                  (:string "Command: ")

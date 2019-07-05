@@ -1,7 +1,7 @@
 #+TITLE: StumpWM scratchpads
 
 * Origin
-Adapted from code as part of @herbertjones [StumpWM Config](https://github.com/herbertjones/my-stumpwm-config).
+Adapted from code as part of [[https://github.com/herbertjones/my-stumpwm-config][Herbert Jones's StumpWM config]] and discussed on [[https://www.reddit.com/r/stumpwm/comments/98q287/scratchpad/][this thread]] at [[https://www.reddit.com/r/stumpwm/][r/stumpwm]].
 
 * Description
 Provides functions (and thus easy keybindings) to raise or hide windows in a split or as a floating window. For example, can have a keybinding to provide a terminal to execute quick commands and then hide it until needed again, or to show a chat program when needed.

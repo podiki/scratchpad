@@ -1,0 +1,28 @@
+#+TITLE: StumpWM scratchpads
+
+* Origin
+Adapted from code as part of @herbertjones [StumpWM Config](https://github.com/herbertjones/my-stumpwm-config).
+
+* Description
+Provides functions (and thus easy keybindings) to raise or hide windows in a split or as a floating window. For example, can have a keybinding to provide a terminal to execute quick commands and then hide it until needed again, or to show a chat program when needed.
+
+* Usage
+Load it as a module after copying it somewhere, e.g. ~~/stumpwm~:
+#+begin_src elisp
+  (set-module-dir "~/stumpwm")
+  (load-module "scratchpad")
+#+end_src
+
+Then can bind a key to run or raise a program, e.g. a floating termite window:
+#+begin_src lisp
+  (defcommand scratchpad-term () ()
+    (scratchpad:toggle-floating-scratchpad "term" "termite"
+                                           :initial-gravity :center
+                                           :initial-width 1900
+                                           :initial-height 1200))
+  (define-key *top-map* (kbd "s-t") "scratchpad-term")
+#+end_src
+
+* License
+[Unlicense](https://unlicense.org/)
+

@@ -24,5 +24,4 @@ Then can bind a key to run or raise a program, e.g. a floating termite window:
 #+end_src
 
 * License
-[Unlicense](https://unlicense.org/)
-
+[[https://unlicense.org/][Unlicense]]
